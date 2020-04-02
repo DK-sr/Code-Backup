@@ -25,7 +25,7 @@ def CloneRepo():
     p1 = Popen(['git', 'clone', OPTION_LIST["clone_url"]], stdout=PIPE)
     p1.wait()
     os.chdir("./" + OPTION_LIST["repo_name"])
-    p2 = Popen(['git', 'pull', '--all'], stdout=PIPE)
+    p2 = Popen(['bash', '../remote_to_local.sh'], stdout=PIPE)
     p2.wait()
     os.chdir(CURRENT_PATH)
 

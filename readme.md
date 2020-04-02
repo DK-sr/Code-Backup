@@ -28,3 +28,5 @@ $ sudo crontab -e
 00 01 * * * /usr/bin/python /home/$USER/Code-Backup-argos/code_backup.py "/home/$USER/Code-Backup-argos"
 ```
 
+*Please use absolute path in a argument.*
+
