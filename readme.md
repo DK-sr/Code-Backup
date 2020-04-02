@@ -13,10 +13,9 @@ Add crontab job.
 
 ```shell
 $ sudo crontab -e
-1 2 3 4 5 ./run.sh
+1 2 3 4 5 /usr/bin/python /home/$USER/Code-Backup-argos/code_backup.py "/home/$USER/Code-Backup-argos"
+
 ```
-
-
 
 * 1: Minutes(0~59)
 * 2: Hours(0~23)
@@ -26,6 +25,6 @@ $ sudo crontab -e
 
 ```shell
 #EX)
-0 2 * * * ./run.sh
+00 01 * * * /usr/bin/python /home/$USER/Code-Backup-argos/code_backup.py "/home/$USER/Code-Backup-argos"
 ```
 

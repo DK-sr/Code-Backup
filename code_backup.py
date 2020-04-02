@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+import sys
 import os
 import yaml
 import shutil
@@ -5,7 +7,8 @@ import time
 from datetime import date, timedelta, datetime
 from subprocess import Popen, PIPE
 
-CURRENT_PATH = os.path.abspath(".")
+CURRENT_PATH = sys.argv[1]
+os.chdir(CURRENT_PATH)
 OPTION_LIST = None
 with open(CURRENT_PATH + "/option.yaml") as file:
     OPTION_LIST = yaml.full_load(file)
@@ -37,9 +40,11 @@ def RemoveExpiredRepos():
             shutil.rmtree(dir)
 
 def main():
+    print "START!"
     CheckRepoExist()
     CloneRepo()
     RemoveExpiredRepos()
+    print "DONE!"
 
 if __name__ == "__main__":
     main()
